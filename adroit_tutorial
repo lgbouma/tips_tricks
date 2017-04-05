@@ -1,0 +1,38 @@
+Tue 11 Oct 2016 10:07:22 AM EDT
+
+The main error in your code as you had written it:
+* You were sending things to background processes with your
+  ampersands. Slurm thinks: "oh, that means the job is done!".
+  (so the actual code you're wrapping around to execute never
+  runs)
+
+Running serial jobs: askRC "how do i set up an array job"
+* Definitely useful b/c it queues MANY JOBS all at once.
+  Note that adroit only has 8 nodes. Something like "tiger"
+  has many hundreds
+  If your jobs are cheap enough then queueing like 100, and
+  then taking up an entire core on a node (whenever there
+  are free nodes) is a workable strategy.
+
+Email (cses@princeton.edu) if you need extra nodes.
+  (e.g. with tiger)
+
+There might be an issue with the directory-making because of
+  the multithreading.
+As in: one core might be like "hey, let me make this directory",
+  when another core already did.
+One workaround: you can make a "specific to this core" if
+  condition in your code. You ID the core number that you want to
+  do your directory-making / your standard I/O with.
+
+There is a test queue. Jobs of allocation 10 minutes or less.
+1 core on 1 node works to access it.
+
+You can ssh onto whatever NODE slurm sends your job to, in order
+  to see what's happening memory-usage wise with top!
+e.g., `ssh adroit-05` (if slurm allocated your job to adroit-05).
+The head nodes are numbered adroit?, and compute nodes are adroit-0?.
+
+Note that the time in #SBATCH -t 0:10:00 is CLOCK time, not computer
+  time. So e.g. 1 hour of 10CPUs (cores) on 1 node is written the same
+  as 1 hour of 1CPU on 1 node.

@@ -1,0 +1,5 @@
+How do I merge multiple PDFs into a single file?
+If you're on a Linux workstation (or possibly a Mac, too), you can use 
+this command-line to merge multiple PDFs into a single file:
+
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=outputfile.pdf file1.pdf file2.pdf file3.pdf

@@ -1,0 +1,23 @@
+==============================
+QUEUES: 
+short 
+4 hour wall clock limit
+60 job maximum per user
+60 processor cores maximum per user
+ 
+medium 
+24 hour wall clock limit
+80 processor cores maximum
+40 processors per user
+8 jobs per user
+4 nodes per user
+ 
+long 
+15 day wall clock limit
+8 job maximum per user
+40 processor cores maximum per user
+80 processor cores maximum allocation
+==============================
+
+Practically, this means a single user can have at most 60 cores 
+at a given time (on the short queue).

@@ -1,0 +1,14 @@
+$ pdftk myoldfile.pdf cat 1 2 4 5 output mynewfile.pdf
+Note that cat and output are special pdftk keywords. cat specifies the operation to perform on the input file. output signals that what follows is the name of the output pdf file.
+
+You can specify page ranges like this:
+
+$ pdftk myoldfile.pdf cat 1-2 4-5 output mynewfile.pdf
+pdftk has a few more tricks in its back pocket. For example, you can specify a burst operation to split each page in the input file into a separate output file.
+
+$ pdftk myoldfile.pdf burst 
+By default, the output files are named pg_0001.pdf, pg_0002.pdf, etc.
+
+pdftk is also capable of merging multiple pdf files into one pdf.
+
+$ pdftk pg_0001.pdf pg_0002.pdf pg_0004.pdf pg_0005.pdf output mynewfile.pd

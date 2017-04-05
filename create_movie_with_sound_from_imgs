@@ -1,0 +1,5 @@
+avconv -f image2 -r 15 -i ./frame%03d.jpg -i soundfile.wav -c copy -crf 20 output.avi
+
+Here -r sets the sampling rate, and -c copy retains the no-compression quality of images. If you prefer to use compression for a smaller file size, you can do something like:
+
+avconv -f image2 -r 15 -i ./frame%03d.jpg -i soundfile.wav -q 5 output.avi

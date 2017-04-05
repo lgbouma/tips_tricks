@@ -1,0 +1,8 @@
+sinfo: show how nodes are being used
+sshare/sprio: show how priority is assigned to jobs
+squeue/stat: show jobs in queues
+smap/sview: graphical display of queues
+slurmtop: text-based view of cluster nodes
+sbatch: _submit_ a job script, e.g. `sbatch submit_serial.cmd`
+squeue -u lbouma # shows you relevant jobs that you wrote
+scancel NUMBER # kills jobs (for array jobs, do e.g. scancel 422010 for jobs of type 422010_1)

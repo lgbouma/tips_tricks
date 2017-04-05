@@ -1,0 +1,6 @@
+locals()
+  What is in current namespace?
+
+vars(obj)
+  Get __dict__ for obj. E.g., vars(np) if you've imported numpy tells you
+  EVERYTHING inside.

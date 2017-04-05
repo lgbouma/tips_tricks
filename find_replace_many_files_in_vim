@@ -1,0 +1,8 @@
+first, open them. e.g.,
+> vi *tex
+you can check they are in your buffer with
+> :ls
+from vim normal mode. Then:
+> :argdo %s/\\npole\\\ /\\npole\\:/gc
+globally replaces (and checks) the '\npole\ ' string with '\npole\:'.
+You obviously don't have to "confirm" either.

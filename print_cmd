@@ -1,0 +1,1 @@
+lpr -Pxe6700 file_name.pdf

@@ -1,0 +1,26 @@
+First: configure remote for a fork.
+Be sure to have a remote repository (e.g., named `upstream`) to sync with the fork:
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+
+Your remotes (`git remote -v`) should then include the remote origin (your fork
+repo) and the remote `upstream` (the original repo with which to sync)
+
+Then:
+git fetch upstream
+git checkout master
+git merge upstream/master
+
+To clean up & remove local + remote branches:
+`git push origin --delete <branch_name>`
+`gut branch -d <branch_name>`
+
+To cache github password & avoid excessive user/pw spam:
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=1800'
+(n.b. above two assume github repositories are being cloned w/ HTTPS. if using SSH keys,
+can use them instead of a user/pwd)
+
+To deal with merge conflicts!!:
+`git mergetool`,
+assuming that you've installed and set up meld, per
+http://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool

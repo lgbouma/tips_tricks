@@ -1,0 +1,17 @@
+ONE-TIME:
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+
+ONCE DONE:
+BEFORE BEGINNING WORK, BRING FORK UP TO DATE
+git fetch upstream
+git checkout master
+git merge upstream/master
+git branch mybranchname
+git checkout mybranchname (n.b. your work should be in mybranchname)
+
+DO UR WORK, BRING IN UR CHANGES
+git add .
+git commit -m 'commit message'
+git push origin mybranchname
+
+THEN SUBMIT THE PULL REQUEST ON GITHUB.

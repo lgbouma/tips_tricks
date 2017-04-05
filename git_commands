@@ -1,0 +1,18 @@
+git init                  Start a new project
+git clone url             Get a copy of someone’s repository
+git add file              Prepare to save changes to file
+git commit [-a] -m        Save those [all] changes (locally)
+git push                  Tell a remote site about my changes
+git pull [–rebase]        Synchronize my local copy with a remote
+git fetch                 Synchronize my local repo with a remote
+git rebase -i             Rewrite history
+git status                What’s up? (locally)
+git log [–oneline]        What have I been doing?
+git blame [FILE]          Who did what to FILE?
+git checkout -b ABC       Make a branch called ABC
+git push -u REMOTE ABC    Push branch ABC to a REMOTE
+git tag -a XYZ            Make a tag named XYZ
+git checkout FILE [REV]   Reset a FILE to REV
+git rm FILE               Remove a FILE
+git mv FILE NEW           Rename FILE to NEW
+git show rev:FILE         Show an old version of FILE

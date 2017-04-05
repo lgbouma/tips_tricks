@@ -1,0 +1,1 @@
+convert -density 300 image.eps -resize 1024x768 image.jpg

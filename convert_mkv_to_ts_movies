@@ -1,0 +1,2 @@
+avconv -i input.mkv -vcodec copy -bsf h264_mp4toannexb output.ts
+

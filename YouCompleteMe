@@ -1,0 +1,12 @@
+YouCompleteMe:
+
+fuzzy completion for vim editor.
+Actual docs: https://github.com/Valloric/YouCompleteMe#general-usage
+
+Usage:
+* Start typing something (e.g., in a `.py` file)
+* ctrl-space prompts for list of all options.
+* Can tab thru them. Once it's the thing you want, can continue by just typing
+  on. Preview window showing important documentation auto-disappears, provided
+  your vimrc has the right settings.
+* shift-tab goes back up the list.

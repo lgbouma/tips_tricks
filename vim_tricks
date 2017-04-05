@@ -1,0 +1,60 @@
+####################
+
+From terminal:
+>>> vi *py
+
+In vimscript:
+`:bufdo tab split`
+
+then moves everything from buffers into tabs.
+
+####################
+`:bro[wse] ol[dfiles]`
+lets you look through recent files you've worked with.
+
+`:help encryption`
+
+####################
+On buffers vs tabs:
+
+They are similar. Tabs were only implemented in vim7. `tabe <path>` opens
+<path> in a tab. Then something like:
+map <F8> :tabn<CR>
+map <F7> :tabp<CR>
+Maps F7 and F8 to tab switching.
+
+You can do similar things with buffers though.
+From bash, `vi *py` opens all python files in working directory in buffers, and
+`:e <path>` does the same as `tabe <path>` but for buffers.
+`:ls` then lists everything in your buffers. `:bn` and `:bp` go to next and
+previous.
+
+This is OK, but right -- you can forget whatever you had in your buffers.
+
+Also, opening things as tabs automatically opens them in buffers too.
+
+####################
+
+You can back out of insert mode with <ctrl+C> rather than <Esc>. (although this
+is a bit useless b/c it doesn't work the same way when combining operators)
+
+####################
+`set textwidth=72` makes for happy git commits.
+
+####################
+For split windows and things:
+
+`ctrl+w, s` horizontally splits screen. So does `:split`.
+`ctrl+w, v` horizontally splits screen. So does `:vsplit`.
+Then `ctrl+w, <arrow key>` lets you move around.
+
+It kind of becomes a mess with tabs too though. My preference is for just many
+tabs, and leafing through them, above split screens.
+
+####################
+
+ALIGNING TEXT:
+
+visual mode, make selection, `gq`. --> will textwrap etc for you. Great for
+worry-free editting of big paragraphs, and whenever textwrap fails (e.g., on
+wonky filetypes)
