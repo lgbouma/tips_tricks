@@ -1,0 +1,58 @@
+#############
+# EXAMPLE 1 #
+#############
+
+#!/bin/bash
+#SBATCH --job-name=find_dips
+#SBATCH --output=search_%A_%a.out # %A: master job ID, %a: array tasks ID.
+#SBATCH --array=1-10
+#SBATCH -N 1   # node count. OpenMP requires 1.
+#SBATCH --ntasks-per-node=2  # core count. 2 per star, for testing.
+#SBATCH -t 0:04:30 # 5min gets test queue. e.g., 3:00:00 for 3hr
+# sends mail when process begins, and
+# when it ends. Make sure you define your email
+#SBATCH --mail-type=begin
+#SBATCH --mail-type=end
+#SBATCH --mail-user=lbouma@princeton.edu
+
+# $SLURM_ARRAY_TASK_ID is the "environmental" variable slurm uses to index
+# the job array. We'll use it to directly index our list of KIC IDs (a text
+# file with the ID numbers).
+
+linenumber=$SLURM_ARRAY_TASK_ID
+kicid="$(sed "${linenumber}q;d" ../data/morph_gt_0.6_ids.txt)"
+
+srun python run_the_machine.py -frd -c -kicid $kicid > LOGS/"$linenumber"_"$kicid".log
+
+#############
+# EXAMPLE 2 #
+#############
+
+#!/bin/bash
+#SBATCH --job-name=star_grid
+#SBATCH --output=star_grid_%A_%a.out # %A: master job ID, %a: array tasks ID.
+#SBATCH --array=1-63
+#SBATCH -N 1   # node count. OpenMP requires 1.
+#SBATCH --ntasks-per-node=1  # core count
+#SBATCH -t 3:00:00 # 5min gets test queue.
+# sends mail when process begins, and
+# when it ends. Make sure you define your email
+#SBATCH --mail-type=begin
+#SBATCH --mail-type=end
+#SBATCH --mail-user=lbouma@princeton.edu
+
+# Set variables. MESA is a program that takes "inlists", i.e. input files which
+# specify what the program will do. We have a separate script that generates
+# these in sub-directories (named $MESA_RUN/"$SLURM_ARRAY_TASK_ID"_MASS_Z/).
+export MESA_DIR="/home/lbouma/software/mesa/mesa-mist"
+export OMP_NUM_THREADS=1
+export MESA_BASE="/home/lbouma/software/mesa/base"
+export MESA_INLIST="$MESA_BASE/inlist"
+export MESA_RUN="/home/lbouma/software/mesa/production-run"
+
+# cd to folder
+export rundir="$(find $MESA_RUN -type d -regex $MESA_RUN"/"$SLURM_ARRAY_TASK_ID"_.*")"
+cd $rundir
+
+# Run MESA (with MIST params)!
+srun $MESA_BASE/star
