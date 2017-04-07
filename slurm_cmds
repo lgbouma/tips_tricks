@@ -6,3 +6,11 @@ slurmtop: text-based view of cluster nodes
 sbatch: _submit_ a job script, e.g. `sbatch submit_serial.cmd`
 squeue -u lbouma # shows you relevant jobs that you wrote
 scancel NUMBER # kills jobs (for array jobs, do e.g. scancel 422010 for jobs of type 422010_1)
+
+alias: 
+
+spriority:
+watch -n 30 -d 'squeue --start --format="%.9i %.7Q %.7q %.15j %.12u %.10a %.20S %.6D %.5C %R %Y" --sort=S --states=PENDING | egrep -v "null" | head -20'
+
+`qos`:
+lets you know which users are doing what things (in which queues)
