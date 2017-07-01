@@ -14,3 +14,5 @@ watch -n 30 -d 'squeue --start --format="%.9i %.7Q %.7q %.15j %.12u %.10a %.20S 
 
 `qos`:
 lets you know which users are doing what things (in which queues)
+
+squeue -u lbouma -t PENDING		# tells you which jobs are pending rather than running
