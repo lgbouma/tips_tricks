@@ -1,0 +1,10 @@
+Have your *.h and *.cpp code written.
+
+Define functions to be imported from C/C++ (*.pxd)
+
+Define wrapper for calling function from python (*.pyx)
+
+Use distutils to compile shared library for python (aka setup.py):
+
+> python setup.py build_ext --inplace
+
