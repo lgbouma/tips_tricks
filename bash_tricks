@@ -1,0 +1,16 @@
+```
+evince `find *pdf -mtime -0.5 -print`
+```
+
+the above is general syntax to send the output of one process as command line
+arguments to another process.  for instance, the above command finds all pdfs
+in your current directory that have been modified in the past half-day, prints
+their names as output, and then sends those as command line arguments to
+evince.
+
+```
+chmod 755 `ls -d */`
+
+```
+changes permissions of all top-level directories in this folder (ls -d lists them)
+

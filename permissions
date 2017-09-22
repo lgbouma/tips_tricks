@@ -1,0 +1,20 @@
+"read, write, executable"
+drwxrw-r--
+
+means: it's a directory, the OWNER (first 3) has rwx, the GROUP MEMBERS have
+rw, and all other users only have read.
+
+----------
+Generally
+
+want files to be
+-rw-rw-r--, 664
+
+and directories as
+drwxr-xr-x, 755
+
+for instance, if you loaded everything onto an external drive which fucks up the permissions on EVERYTHING, you can fix via
+
+chmod 755 `find */ -maxdepth 4 -type d`
+
+chmod 664 `find */ -maxdepth 4 -type f`
