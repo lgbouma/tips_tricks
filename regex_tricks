@@ -1,0 +1,13 @@
+
+In vim, to replace contents of all lines to between quotes with a comma (e.g., a list)
+
+:%s/^\(.*\)$/"\1"/
+
+%s/foo/bar is find-replace in vim
+
+^ is beginning of line, $ is end of line
+(.*) matches everything between (and \( \) because protected characters)
+\1 is where the captured content is stored
+
+---------------
+
