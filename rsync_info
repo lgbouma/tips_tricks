@@ -1,0 +1,36 @@
+RSYNCING A DIRECTORY BETWEEN MACHINES
+
+FROM REMOTE TO LOCAL
+
+```
+lgbouma@slim:~$ rsync -rv luke@brik:~/temp .
+```
+
+receiving incremental file list
+temp/1
+temp/2
+temp/3
+temp/dude
+temp/hi/1
+
+sent 131 bytes  received 339 bytes  313.33 bytes/sec
+total size is 35  speedup is 0.07
+
+
+FROM LOCAL TO REMOTE
+```
+lgbouma@slim:~$ rsync -rv temp luke@brik:~/.
+```
+
+sending incremental file list
+temp/1
+temp/2
+temp/3
+temp/dude
+temp/hi/1
+
+sent 376 bytes  received 127 bytes  335.33 bytes/sec
+total size is 35  speedup is 0.07
+
+
+
