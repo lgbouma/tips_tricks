@@ -4,3 +4,16 @@ locals()
 vars(obj)
   Get __dict__ for obj. E.g., vars(np) if you've imported numpy tells you
   EVERYTHING inside.
+
+----------
+
+import IPython; IPython.embed() # for most debugging needs
+
+----------
+
+python2: `reload` is a builtin, so in ipython you can reload(foobar) if you changed
+  the foobar module.
+
+python3: from importlib import reload
+
+

@@ -1,12 +1,7 @@
 ####################
 
 From terminal:
->>> vi *py
-
-In vimscript:
-`:bufdo tab split`
-
-then moves everything from buffers into tabs.
+>>> vi -p *py
 
 ####################
 `:bro[wse] ol[dfiles]`
@@ -39,7 +34,7 @@ You can back out of insert mode with <ctrl+C> rather than <Esc>. (although this
 is a bit useless b/c it doesn't work the same way when combining operators)
 
 ####################
-`set textwidth=72` makes for happy git commits.
+`set textwidth=70` makes for happy git commits.
 
 ####################
 For split windows and things:
@@ -47,6 +42,14 @@ For split windows and things:
 `ctrl+w, s` horizontally splits screen. So does `:split`.
 `ctrl+w, v` horizontally splits screen. So does `:vsplit`.
 Then `ctrl+w, <arrow key>` lets you move around.
+
+Better:
+
+`ctrl+w ctrl-w`: cycle through windows.
+
+`:hide` hide this window
+
+`:only` close all other windows but this window
 
 It kind of becomes a mess with tabs too though. My preference is for just many
 tabs, and leafing through them, above split screens.
@@ -58,3 +61,35 @@ ALIGNING TEXT:
 visual mode, make selection, `gq`. --> will textwrap etc for you. Great for
 worry-free editting of big paragraphs, and whenever textwrap fails (e.g., on
 wonky filetypes)
+
+####################
+
+To shift back to shell, if you so desire:
+`ctrl+Z`
+
+then you're in shell, and vim is in bkgnd.
+
+Then `fg` from shell and you're back.
+
+####################
+
+`:terminal` opens a terminal in this window.
+
+This is pretty great because it turns vim into a more IDE-like environment.
+
+For instance, when developing, it can be nice to create a binding that splits
+your current screen vertically, then gives you a terminal in one window:
+
+`ctrl+w, v`
+`ctrl+w, ctrl+w`
+`:terminal`
+
+####################
+
+if you've set up say jedi-vim to get documentation for whatever libraries you
+use, then it can be nice to move windows around with:
+
+`ctrl+w, L/H`
+
+where `H` moves it to the left, `L` to the right.
+

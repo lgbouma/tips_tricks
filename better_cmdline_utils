@@ -1,0 +1,31 @@
+----------
+use `geeqie` to view reduced jpg images.
+
+(it's better in most cases than `eog`)
+
+----------
+
+`htop`, rather than `top`.
+
+----------
+
+alias weather='curl http://wttr.in/Princeton'
+
+----------
+
+The `at` utility:
+
+drwxr-xr-x 12 luke luke 4.0K Jan 12 15:24 Dropbox
+luke@brik:~$ at now + 1 minutes
+warning: commands will be executed using /bin/sh
+at> echo "hi dude" >> test.temp &
+
+--> runs it 1 minute from now
+
+`atq` for the queue, `atrm` to take off scheduled things
+
+----------
+
+Relatedly OFC:
+
+`crontab` -- for repeated execution of the same programs
