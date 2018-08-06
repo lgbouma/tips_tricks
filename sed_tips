@@ -1,0 +1,11 @@
+for i in /etc/rc.*; do
+  echo $i
+done
+
+e.g., a nice one-liner to count stars in source extraction files.
+
+` for i in *.fistar; do sed -e '/^#/d' $i | wc -l | tee -a count_stars.txt; done `
+
+where the regex:
+^ := asserts position at start of line
+

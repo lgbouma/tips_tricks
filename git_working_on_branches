@@ -1,0 +1,31 @@
+
+Important concepts: `stash` and `cherry-pick`.
+
+Let's say you committed a good thing to a branch, and you want to move it into master.
+
+A full merge is unnecessary. Instead, cherry-pick.
+
+`git checkout master`
+`git cherry-pick <commit-hash>
+
+& push it.
+
+---
+
+For this to work, you need to be able to switch to master.
+
+To do so,
+
+`git stash`
+
+and to return and get everything you stashed,
+
+`git stash apply`
+
+or if there are multiple stashed things
+
+`git stash apply stash@{2}`.
+
+You can see everything you've stashed via
+
+`git stash list`

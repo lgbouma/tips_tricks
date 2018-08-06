@@ -1,0 +1,8 @@
+number of characters per line of a text file:
+
+awk '{ print length($0); }' foo.txt
+
+
+number of column entries per line of a text file:
+
+awk '{ print NF; }' foo.txt

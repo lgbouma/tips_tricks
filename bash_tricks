@@ -1,3 +1,5 @@
+####################
+
 ```
 evince `find *pdf -mtime -0.5 -print`
 ```
@@ -14,3 +16,50 @@ chmod 755 `ls -d */`
 ```
 changes permissions of all top-level directories in this folder (ls -d lists them)
 
+
+####################
+
+to send an ssh shell to the background:
+
+key-stroke sequence:
+
+  ENTER + ~ + Ctrl + Z
+
+the first two are ways to avoid the ssh client trapping the keystrokes
+
+####################
+
+scripting cheatsheet:
+
+https://devhints.io/bash
+
+for i in {1..5}; do echo $i; done
+
+for i in /etc/rc.*; do
+  echo $i
+done
+
+e.g., a nice one-liner to count stars in source extraction files.
+
+` for i in *.fistar; do sed -e '/^#/d' $i | wc -l | tee -a count_stars.txt; done `
+
+where the regex:
+^ := asserts position at start of line
+
+####################
+
+Baby's first read script:
+
+blah=`ls *'.txt'`
+
+cat $blah | while read thisline; do
+  echo $thisline
+done |
+programactsonlines
+
+####################
+
+Needing to remove shiloads of files: xargs lets you execute non-bashbuiltins
+(echo is a built, rm is not)
+
+` echo *.grcollectilc | xargs rm `

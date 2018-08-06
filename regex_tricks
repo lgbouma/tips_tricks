@@ -11,3 +11,54 @@ In vim, to replace contents of all lines to between quotes with a comma (e.g., a
 
 ---------------
 
+The concept of *quantifiers* is important. E.g.,: "figure out a pattern that
+matches the function definition and docstrings, but not the contents, for all
+the functions in a python file":
+
+solution:
+  def (.|\n)*?\):(.|\n)*?'''(.|\n)*?'''
+
+(.|\n) --> "match either characters or newlines"
+*? --> matches between zero and unlimited times, as few times as possible,
+       expanding as needed (lazy, or "not greedy")
+
+for more info: http://www.rexegg.com/regex-quantifiers.html
+
+test text:
+
+```
+def parallel_convsubfits_forcedphot(
+        subfitslist,
+        forcedphot_cmrawphot,
+        outdir,
+        photreftype='oneframe',
+        kernelspec='b/4;i/4;d=4/4',
+        lcapertures='1.95:7.0:6.0,2.45:7.0:6.0,2.95:7.0:6.0',
+        photdisjointradius=2,
+        nworkers=16,
+        maxworkertasks=1000,
+):
+  '''
+  docstring here
+  '''
+  hi = 3
+
+def forcedphot_subphot_worker(task):
+    '''
+    This does subtracted frame photometry on forced-phot objects.
+
+    task[0] = subframe
+    task[1] = photreftype
+    task[2] = kernelspec
+    task[3] = lcapertures
+    task[4] = disjointradius
+    task[5] = outdir
+    task[6] = frcmrawphot
+
+    '''
+
+    (subframe, photreftype, kernelspec,
+     lcapertures, disjrad, outdir, frcmrawphot) = task
+```
+
+---------------

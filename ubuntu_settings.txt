@@ -1,0 +1,23 @@
+it is possible to configure the terminal to look slightly different from
+defaults.  maybe not worth it though.
+
+----
+
+to get rid of the annoying transition effect when switching between virtual
+desktops,
+
+https://askubuntu.com/questions/58553/turning-off-the-transition-animation-when-changing-workspaces-in-compiz-gnome2
+
+apt-get install compizconfig-settings-manager
+
+then Desktop → Desktop Wall → Viewport switching set Wall sliding duration to
+0.
+
+you also want to do
+
+Desktop → Desktop Wall → Viewport switch preview
+--> turn off show viewport switcher preview
+--> turn off show live viewport previews
+--> set switch target prview visibility time to 0
+
+----

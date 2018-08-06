@@ -1,0 +1,5 @@
+
+git remote set-url origin git@github.com:lgbouma/tips_tricks.git
+
+you really want SSH keys set up, rather than inputting passwords incessantly
+

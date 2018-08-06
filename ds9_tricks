@@ -1,0 +1,26 @@
+if you have a ds9 session running, e.g., as a background process...
+
+then:
+
+  cat 1-426082d_8.fits | xpaset ds9 fits
+
+is equivalent to opening the new fits file in ds9.
+
+There is also "xpaget". See http://ds9.si.edu/doc/ref/xpa.html.
+
+See e.g., https://hea-www.harvard.edu/RD/xpa/programs.html for some examples.
+
+To change colormap used by ds9:
+
+  xpaset -p ds9 cmap Heat
+
+To change position of crosshair:
+
+  xpaset -p ds9 crosshair 100 100 physical
+
+Drop some circles:
+
+  $echo "image; circle 100 100 20" | xpaset ds9 regions 
+
+  $echo "fk5; circle 13:29:55 47:11:50 .5'" | xpaset ds9 regions 
+

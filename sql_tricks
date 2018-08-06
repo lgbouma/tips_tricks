@@ -1,0 +1,4 @@
+Deleting rows, based on column value:
+
+hpx=> delete from calibratedframes where fits='/nfs/phtess1/ar1/HATPI/HP0/RED/projid12-G577-ccd8-sdssr/1-423888e_8.fits';
+
