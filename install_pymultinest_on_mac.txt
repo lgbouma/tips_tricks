@@ -1,0 +1,53 @@
+following http://astrobetter.com/wiki/MultiNest+Installation+Notes
+
+----------
+first, install:
+
+* Xcode (on macOS high sierra, 10.13.6, this was Xcode 10)
+* Xcode command line utils
+
+
+then, install
+
+* macports for the appropriate version of MacOS
+
+https://www.macports.org/install.php
+
+* you may need to correct the xcode path:
+
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+(nb you must also have installed it into "Applications")
+
+then:
+
+```
+sudo port install gcc7
+
+sudo port install cmake
+
+sudo port install openmpi
+```
+
+then:
+
+```
+sudo port select --set gcc mp-gcc7
+sudo port select --set mpi openmpi-mp-fortran
+```
+
+and the pip mpi4py wrks, when the conda one doesnt:
+```
+pip install mpi4py
+```
+
+then:
+
+```
+git clone https://github.com/JohannesBuchner/MultiNest.git
+cd MultiNest/build/
+cmake ..
+make
+sudo make install
+```
+

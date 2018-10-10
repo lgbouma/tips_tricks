@@ -1,8 +1,8 @@
+====================
 it is possible to configure the terminal to look slightly different from
 defaults.  maybe not worth it though.
 
-----
-
+====================
 to get rid of the annoying transition effect when switching between virtual
 desktops,
 
@@ -20,4 +20,29 @@ Desktop → Desktop Wall → Viewport switch preview
 --> turn off show live viewport previews
 --> set switch target prview visibility time to 0
 
-----
+====================
+TO GET THE FONTS MATPLOTLIB WANTS
+
+sudo apt-get install msttcorefonts -qq
+
+====================
+Use "put" to avoid needing to click to move windows between screens
+
+Install CompizConfig Settings Manager:
+
+  sudo apt install compizconfig-settings-manager compiz-plugins-extra
+
+Run Compiz from the dash
+
+Click Window Management
+
+Enable the Put plug-in (select the check-box)
+
+Click on Put
+
+Configure the shortcut for Put to next Output (click enable). I like to use
+<ctrl+shift+j>, since it matches vim keybindings.
+
+Log out and back in to make changes take effect
+
+====================
