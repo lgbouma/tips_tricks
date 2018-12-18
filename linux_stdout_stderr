@@ -10,6 +10,9 @@ Error messages go somewhere else, STDERR.
 
 To route in different ways:
 
+Note: for python output, the below will only update sporadically. If you want
+real-time text output updates, use `python -u my_program.py`.
+
           || visible in terminal ||   visible in file   || existing
   Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file   
 ==========++==========+==========++==========+==========++===========

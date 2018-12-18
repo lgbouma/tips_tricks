@@ -1,0 +1,2 @@
+echo /path/to/my/script | at now + 5 min
+

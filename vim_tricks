@@ -93,3 +93,14 @@ use, then it can be nice to move windows around with:
 
 where `H` moves it to the left, `L` to the right.
 
+
+####################
+Jumping to previously visited locations
+
+http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations
+
+Ctrl-O jumps back to the previous (older) location
+Ctrl-I jumps forward to the next (newer) location.
+
+Combining with MARKS, (`m -> a` to mark as "a", then `'a` to jump back to that
+line), this eases navigation around a text file by a lot.
