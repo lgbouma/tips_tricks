@@ -4,6 +4,12 @@ From terminal:
 >>> vi -p *py
 
 ####################
+Remove all trailing whitespace:
+:%s/\s\+$//gc
+
+\s finds a whitespace (a space or tab). \+ finds one or more occurrence. $ is the "end of line" character.
+
+####################
 `:bro[wse] ol[dfiles]`
 lets you look through recent files you've worked with.
 
@@ -104,3 +110,20 @@ Ctrl-I jumps forward to the next (newer) location.
 
 Combining with MARKS, (`m -> a` to mark as "a", then `'a` to jump back to that
 line), this eases navigation around a text file by a lot.
+
+
+####################
+Jumping back to file explorer, after opening a file
+
+:Rex[plore]   (goes back to file explorer)
+
+:b#  (goes back to prevously edited buffer)
+
+
+####################
+Other directory browsing
+
+:Vex[plore]
+:Vexplore!
+
+vertically split window, opening a new explorer window in the newly opened side-window.

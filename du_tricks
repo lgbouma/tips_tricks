@@ -1,3 +1,10 @@
 while true; do du -sch .[!.]* * |sort -h; printf '\n\n'; sleep 120; done
 
 make list of all stuff, sort. give total.
+
+
+----------
+
+du -k ./ | sort -n -r | head -30
+
+find top 30 biggest object, sizes listed in Mb blocks

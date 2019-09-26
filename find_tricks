@@ -17,3 +17,13 @@ find . -name '*.pdf' -exec evince {} \;
 
 but this is not as nice.
 
+----------
+
+"How can I recursively find all files in current and subfolders based on
+wildcard matching?"
+
+https://stackoverflow.com/questions/5905054/how-can-i-recursively-find-all-files-in-current-and-subfolders-based-on-wildcard
+
+find . -name "foo*"
+
+find needs a starting point, and the . (dot) points to the current directory.

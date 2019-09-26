@@ -63,3 +63,19 @@ Needing to remove shiloads of files: xargs lets you execute non-bashbuiltins
 (echo is a built, rm is not)
 
 ` echo *.grcollectilc | xargs rm `
+
+
+####################
+
+Counting number of files in directory when list is long. Note: piping has no maximum file length limit.
+
+` find -type f -name '*.fits' | wc -l `
+(not this is nicer than xarg.  and if you do a path like '*/*.fits', use the -wholename option instead)
+
+find . -wholename "./cam?_ccd?/hlsp*.fits" | wc -l
+
+####################
+
+Get random file from directory
+
+ls | sort -R | head -n1
