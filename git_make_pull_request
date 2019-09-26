@@ -1,0 +1,15 @@
+2 main work flows:
+1) PR from a forked repo
+2) PR from a branch within a repo that you have write access to
+
+We follow (2) here.
+
+* create topical branch
+
+git pull origin master
+git checkout -b urname
+git push origin urname
+
+* to create the PR:
+go to the rpeo page on github. then click the "PR" button in repo header.
+
