@@ -1,0 +1,23 @@
+Say you have some images or movies or something you are
+producing remotely, but you want to inspect them locally.
+
+X11 forwarding is one option, but it's notoriously slow.
+
+Better idea: mount the folder on your remote server to a local folder, using `sshfs`:
+
+sshfs username@server:/path/to/folder /path/to/mount/point
+
+You can unmount via:
+
+fusermount -u /path/to/mount/point
+
+----------
+
+to do this on MacOS:
+
+first install FUSE
+then install SSHFS
+
+both are available from
+
+https://osxfuse.github.io/

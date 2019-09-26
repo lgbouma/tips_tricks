@@ -1,0 +1,7 @@
+ffmpeg -i input_file.mp4 -acodec copy -vcodec copy -f mov output_file.mov
+
+except in practice, if the global headers in your mp4 file are bad, the above wont help. (For e.g., importing to keynote).
+
+instead, do:
+
+ffmpeg -framerate 24 -pattern_type glob -i '*.jpg' -c:v libx264 -pix_fmt yuv420p -preset fast outfile.mov
