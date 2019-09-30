@@ -1,0 +1,8 @@
+rm -rf directory, 1000 files: 0.013109 seconds
+rm INDIVIDUAL files, 1000 files: 0.019045 seconds
+rm -rf directory, 10000 files: 0.097093 seconds
+rm INDIVIDUAL files, 10000 files: 0.002368 seconds
+rm -rf directory, 100000 files: 1.104456 seconds
+rm INDIVIDUAL files, 100000 files: 0.004304 seconds
+rm -rf directory, 1000000 files: 85.317306 seconds
+rm INDIVIDUAL files, 1000000 files: 0.024725 seconds
