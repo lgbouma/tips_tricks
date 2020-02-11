@@ -72,7 +72,11 @@ Counting number of files in directory when list is long. Note: piping has no max
 ` find -type f -name '*.fits' | wc -l `
 (not this is nicer than xarg.  and if you do a path like '*/*.fits', use the -wholename option instead)
 
-find . -wholename "./cam?_ccd?/hlsp*.fits" | wc -l
+`find . -wholename "./cam?_ccd?/hlsp*.fits" | wc -l`
+
+or just
+
+`echo */*.fits | xargs ls | wc -l`
 
 ####################
 

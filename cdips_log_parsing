@@ -1,0 +1,6 @@
+For cdips-pipeline, from a bunch of lines like "Wrote foo.csv", in a bunch of log files, print all the csvs:
+
+cat `tail -q -n1 *log | awk '{ print $2; }'`
+
+-------
+

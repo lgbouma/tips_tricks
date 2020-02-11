@@ -6,3 +6,9 @@ awk '{ print length($0); }' foo.txt
 number of column entries per line of a text file:
 
 awk '{ print NF; }' foo.txt
+
+
+search a "|" delimited CSV file for a string, then return the first entry, field-separated by "|"
+
+ grep '269861070.01' candidates.csv  | awk -F '|' '{ print $1 }'
+
