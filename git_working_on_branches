@@ -1,5 +1,23 @@
+-----
+First:
+$ git checkout -b <BRANCHNAME>
+...work on the branch...
 
-Important concepts: `stash` and `cherry-pick`.
+to push to remote:
+$ git push -u origin <BRANCHNAME>
+
+once ready to merge:
+$ (BRANCHNAME) git merge master   # resolve merge conflicts if there are any
+$ (BRANCHNAME) git checkout master
+$ (master) git merge BRANCHNAME
+
+to pull a branch from remote:
+$ git fetch origin <BRANCHNAME>
+$ git checkout -b <BRANCHNAME> origin/<BRANCHNAME> # to make the new local branch, from the remote branch
+
+
+-----
+Other helpful things: `stash` and `cherry-pick`.
 
 Let's say you committed a good thing to a branch, and you want to move it into master.
 
@@ -10,7 +28,7 @@ A full merge is unnecessary. Instead, cherry-pick.
 
 & push it.
 
----
+-----
 
 For this to work, you need to be able to switch to master.
 

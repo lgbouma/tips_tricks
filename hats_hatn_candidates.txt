@@ -1,0 +1,14 @@
+from ht2
+
+HATS
+$ mysql -U HSCAND -u hscand_r -phscand_11 -h hatsouth -e 'select HATSname, HATSra, HATSdec, HATS_nam_hat, HATSP, HASTE, HATSq, HATSTODO, HATSclass, HATSFUstat from HATS limit 10000;' -N
+
+HATN
+$ mysql -U HATRED -u hatred_r -phatred11 -h hat -e 'select HTRname, HTRra, HTRdec, HTR_nam_hat, HTRP, HTRE, HTRq, HTRTODO, HTRclass, HTRFUstat from HTR limit 100000;' -N
+
+
+The columns produced by this are HATSname = HATS candidate id; HATSra and HATSdec = RA and Dec J2000.0, HATS_nam_hat = HAT star id, which can be converted to GAIA DR2 id via 'gaia2read --id $HATS_nam_hat --idtype HAT', HATSP = period in days, HASTE = reference epoch of transit *ingress*, HATSq = duration/period,  HATSTODO = priorities for further follow-up, HATSclass = string denoting the classification of the object, HATSFUstat = list of facilities that have already observed the system.
+
+For Gaia xmatch:
+
+gaia2read --id $HATS_nam_hat --idtype HAT

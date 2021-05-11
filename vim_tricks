@@ -3,6 +3,12 @@
 From terminal:
 >>> vi -p *py
 
+Or if vim is already open,
+:args file1 file2 | argdo tabe
+or
+:args *txt | argdo tabe
+
+
 ####################
 Remove all trailing whitespace:
 :%s/\s\+$//gc
@@ -33,6 +39,16 @@ previous.
 This is OK, but right -- you can forget whatever you had in your buffers.
 
 Also, opening things as tabs automatically opens them in buffers too.
+
+Finally: if you closed something and want to reopen it, `:ls` lists what's available, and 
+
+```
+:ls
+  1 %a   "foo"                          line 1
+  2      "bar"                          line 0
+```
+
+and then `tab sb 2` opens e.g., buffer 2 in a new tab
 
 ####################
 
@@ -90,6 +106,12 @@ your current screen vertically, then gives you a terminal in one window:
 `ctrl+w, ctrl+w`
 `:terminal`
 
+(note, `ctrl+w, q` quits)
+
+
+
+
+
 ####################
 
 if you've set up say jedi-vim to get documentation for whatever libraries you
@@ -107,6 +129,8 @@ http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations
 
 Ctrl-O jumps back to the previous (older) location
 Ctrl-I jumps forward to the next (newer) location.
+
+####################
 
 Combining with MARKS, (`m -> a` to mark as "a", then `'a` to jump back to that
 line), this eases navigation around a text file by a lot.
@@ -127,3 +151,37 @@ Other directory browsing
 :Vexplore!
 
 vertically split window, opening a new explorer window in the newly opened side-window.
+
+
+####################
+Match the annoying "1.234 +or- 0.325" pattern in ApJ table text files, and yank
+all matches to register x, and then paste it.
+
+: [-+]\=\d*\.[-+]\=\d*\ +or-\ [-+]\=\d*\.[-+]\=\d*
+: CopyMatches x
+: Ctrl-R + x
+
+To paste it:
+"xp
+("x accesses register x, p pastes)
+
+
+####################
+Insert numbers 11 thru 15 on next lines
+
+:put =range(11,15)
+
+
+####################
+Open last closed file in new vim tab
+
+`:ls`         # will list whatever is in buffers
+`:tabe #N`    # opens number N. Can also just do `tabe #` for most recent.
+
+####################
+
+If you get sick of line-deletion overwriting your default "paste" register...
+Realize that you can do "yy" to yank a line selection...
+Then "dd" on whatever you want to delete ... And then although "p" will paste whatever "dd" put into the _default register_ "", if you want to access what you YANKED earlier with "yy" you can do that with `"0p`, which pastes from the non-validatile YANK register "0
+
+Another solution for this is to use the "black hole register" but the above solution is my preferred one.

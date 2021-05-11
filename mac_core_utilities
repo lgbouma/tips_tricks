@@ -1,0 +1,48 @@
+
+Mac OS X by default installs BSD core utilities. This has
+some unfortunate consequences, like
+
+`ls --help`
+
+will fail.
+
+To fix this, and use the normal options you EXPECT from your utilities, do:
+
+brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt gcc
+
+See https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities for details
+
+----------
+
+You also need to install vim on new macs.
+
+brew install vim
+
+in your bashrc:
+alias vi=/usr/local/Cellar/vim/8.2.0250_1/bin/vim
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+After ensuring the appropriate new computers and paths are linked in the
+.vimrc,
+
+vim +PluginInstall +qall
+
+You may need to export a symlink to the homebrew-installed vim share directory
+in order to get proper color schemes etc working.
+
+ln -s /usr/local/Cellar/vim/8.2.0250_1/share/vim/ /usr/local/share/vim
+
+----------
+
+iTerm settings are also a thing.
+
+* Tabs open in same directory
+* Natural text editing mode for modifiers (cmd, alt, etc)
+* Appearance: tab width not full.
+
+----------
+
+Then there's also conda
+
+----------

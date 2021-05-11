@@ -12,7 +12,7 @@ git merge upstream/master
 
 To clean up & remove local + remote branches:
 `git push origin --delete <branch_name>`
-`gut branch -d <branch_name>`
+`git branch -d <branch_name>`
 
 To cache github password & avoid excessive user/pw spam:
 git config --global credential.helper cache

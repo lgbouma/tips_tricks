@@ -83,3 +83,11 @@ or just
 Get random file from directory
 
 ls | sort -R | head -n1
+
+####################
+
+Replace horizontal whitespace with a comma in a text file
+
+tr -s '[:blank:]' ',' < in.txt > out.txt
+
+

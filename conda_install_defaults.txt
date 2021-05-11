@@ -1,0 +1,17 @@
+$ conda create --name py37 python=3.7
+$ conda activate py37
+$ conda install -c astropy -c defaults scipy h5py beautifulsoup4 html5lib bleach pyyaml pandas sortedcontainers pytz matplotlib setuptools mpmath bottleneck jplephem asdf 
+$ conda install -c conda-forge pymc3
+$ conda install -c anaconda ipython
+$ python -m pip install corner
+$ pip install astroquery
+$ pip install wotan
+
+Then, most of your projects depend on...
+* astrobase
+* aesthetic
+* cdips
+
+
+Maybe:
+* earhart

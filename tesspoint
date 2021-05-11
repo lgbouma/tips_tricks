@@ -1,0 +1,11 @@
+Return pixel coordinates for target by TIC ID (must be online)
+python -m tess_stars2px -t 261136679
+
+Display command line arguments and features
+python -m tess_stars2px -h
+
+Via names
+python -m tess_stars2px -n Pleiades
+
+Via Coordinates [decimal]
+python -m tess_stars2px -c 54.7 -31.2

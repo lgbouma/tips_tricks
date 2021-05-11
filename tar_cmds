@@ -1,4 +1,6 @@
-tar czf name_to_make.tar.gz target_name
+tar and gzip a folder:
 
-will tar and gzip a folder. `-` is optional.
+`tar czf name_to_make.tar.gz target_name`
 
+tar and gzip files:
+`tar czf name_to_make.tar.gz path/file1 path/file2`
