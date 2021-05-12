@@ -1,0 +1,30 @@
+Need:
+* MyLib
+* setup.py
+* setup.cfg
+* LICENSE.txt
+* README.md
+
+NB: setup.py requires `download_url`, per
+https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56
+
+see
+ `/Users/luke/Dropbox/proj/aesthetic/setup.py` 
+for a demo...
+e.g.,
+  download_url =
+f'https://github.com/lgbouma/aesthetic/archive/refs/tags/v{str(version).replace(".","")}.tar.gz' 
+
+
+then:
+
+```
+# create a source distribution
+python setup.py sdist
+
+(one-time): pip install twine
+
+twine upload dist/*
+```
+
+use your username and login from pypi

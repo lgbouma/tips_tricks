@@ -1,3 +1,5 @@
+PYTHON 37:
+
 $ conda create --name py37 python=3.7
 $ conda activate py37
 $ conda install -c astropy -c defaults scipy h5py beautifulsoup4 html5lib bleach pyyaml pandas sortedcontainers pytz matplotlib setuptools mpmath bottleneck jplephem asdf 
@@ -6,12 +8,23 @@ $ conda install -c anaconda ipython
 $ python -m pip install corner
 $ pip install astroquery
 $ pip install wotan
+$ python -m pip install -U aesthetic==0.4
 
-Then, most of your projects depend on...
-* astrobase
-* aesthetic
+
+PYTHON 38 (2021/05/11):
+(note: you can't do this easily in a bash script b/c of how conda handles bash
+environments, and b/c you need to click "[y]" manually in response to conda
+prompts)
+
+```
+conda create --name py38 python=3.8
+conda init bash
+conda activate py38
+conda install -c astropy -c defaults scipy h5py beautifulsoup4 html5lib bleach pyyaml pandas sortedcontainers pytz matplotlib setuptools mpmath bottleneck jplephem asdf
+conda install -c anaconda ipython pip
+python -m pip install astroquery; python -m pip install wotan; python -m pip install -U pytest; python -m pip install -U pymc3; python -m pip install -U corner; python -m pip install -U "exoplanet[extras]"; python -m pip install -U astrobase; python -m pip install -U lightkurve; python -m pip install -U xarray==0.16.0; python -m pip install -U aesthetic==0.4
+```
+
+In addition, some of your projects depend on...
 * cdips
-
-
-Maybe:
 * earhart
